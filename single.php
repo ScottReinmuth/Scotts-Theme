@@ -1,9 +1,10 @@
 <?php get_header(); ?>
 
-<?php $options = get_option('sts_settings');
-if ($options['sts_select_blog_template'] == '1'){
+<?php
+$layout_options = get_option('sts_layout_options');
+if ($layout_options['sts_select_blog_template'] == '1'){
    get_template_part('/templates/blog/default');
-}if ($options['sts_select_blog_template'] == '2'){
+}if ($layout_options['sts_select_blog_template'] == '2'){
    get_template_part('/templates/blog/no-sidebar');
 } ?>
 

@@ -156,7 +156,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 // End Custom Exerpt Length
 
 // Include Theme Options
-require_once(get_template_directory() . '/theme-settings/settings-page.php');
+require_once(get_template_directory() . '/theme-settings/theme-settings.php');
 add_action('wp_head', 'my_custom_css');
     function my_custom_css(){
     require_once( get_template_directory() . '/css/theme-styles.php' );

@@ -1,5 +1,5 @@
 <?php
-$options = get_option('sts_settings');
+$colors = get_option('sts_theme_colors');
 ?>
 
 <style type="text/css">
@@ -7,7 +7,7 @@ $options = get_option('sts_settings');
 
     header,
     #mobile-nav {
-        background-color: <?php echo get_option('header_background_color') ?>;
+        background-color: <?php echo $colors['header_background_color'] ?>;
     }
 
     header .site-title > a,
@@ -19,7 +19,7 @@ $options = get_option('sts_settings');
     .menu-main-menu-container-mobile ul .menu-item-has-children > a:after,
     nav .menu-main-menu-container #menu-main-menu > li.open > a,
     nav .menu-main-menu-container #menu-main-menu > li > a {
-        color: <?php echo get_option('header_font_color') ?>;
+        color: <?php echo $colors['header_font_color'] ?>;
     }
     /* Main Navigation Styles */
 
@@ -30,38 +30,34 @@ $options = get_option('sts_settings');
     input[type="submit"],
     .mobile-menu-title,
     .menu-main-menu-container-mobile ul li .sub-menu {
-        background-color: <?php echo get_option('theme_primary_color') ?>;
+        background-color: <?php echo $colors['primary_theme_color'] ?>;
     }
 
-    nav #menu-main-menu > li.current-menu-item > a,
+    nav .menu-main-menu-container #menu-main-menu > li.current-menu-item > a,
     nav .menu-main-menu-container #menu-main-menu > li > a:hover,
     nav .menu-main-menu-container #menu-main-menu > li.open > a {
-        border-bottom: 2px solid <?php echo get_option('theme_primary_color') ?>;
+        border-bottom: 2px solid <?php echo $colors['primary_theme_color'] ?>;
     }
     /* Button Styling */
 
     .btn {
         color: <?php echo get_option('button_text_color') ?> !important;
-        background-color: <?php echo get_option('button_color') ?>;
+        background-color: <?php echo $colors['button_color'] ?>;
     }
 
     .btn:hover {
-        background-color: <?php echo get_option('button_hover_color') ?>;
+        background-color: <?php echo $colors['button_hover_color'] ?>;
     }
 
     .content-wrapper a {
-        color: <?php echo get_option('theme_primary_color') ?>;
+        color: <?php echo $colors['primary_theme_color'] ?>;
     }
 
     a {
-        color: <?php echo get_option('link_color') ?>;
+        color: <?php echo $colors['link_color'] ?>;
     }
 
     a:hover {
-        color: <?php echo get_option('link_hover_color') ?>;
-    }
-
-    header{
-      background: <?php echo $options['theme_primary_color']; ?> !important;
+        color: <?php echo $colors['link_hover_color'] ?>;
     }
 </style>
