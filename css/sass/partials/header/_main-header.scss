@@ -1,0 +1,30 @@
+.sticky-header-container {
+    height: 6em;
+    visibility: hidden;
+}
+header {
+    height: 6em;
+    box-shadow: 0 0 0.2em 0 #333333;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    .site-title-container {
+        display: table;
+        height: 6em;
+        .site-title {
+            display: table-cell;
+            vertical-align: middle;
+            > a {
+                text-decoration: none;
+            }
+        }
+    }
+    .header-nav-container {
+        display: table;
+        height: 6em;
+    }
+}
+@import 'menu/desktop-menu';
+@import 'mobile-menu/mobile-menu';

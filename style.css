@@ -1,0 +1,17 @@
+/*
+Theme Name: Scott's Theme
+Theme URI:
+Description: Scott's Theme
+Github Theme URI: https://github.com/ScottReinmuth/Scotts-Theme
+Github Branch: master
+License: GNU
+License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
+Version: v1.0
+Author: ScottReinmuth
+Author URI: http://www.ScottReinmuth.com/
+Tags:
+*/
+
+@import url('css/theme-structure.css');
+@import url('css/animate.min.css');
+@import url('css/sass/main-styles.css')

@@ -1,0 +1,100 @@
+@import 'partials/header/main-header';
+@import 'partials/footer/main-footer';
+/* // NOTE Blog Index Styles */
+.blog {
+    .post {
+        margin-bottom: 2em;
+        padding: 1.5em;
+        background-color: #f0f0f0;
+        .post-meta-container {
+            background-color: #f0f0f0;
+        }
+        .post-meta-image {
+            margin-bottom: 2em;
+        }
+        .post-meta-title a {
+            color: #202121;
+            text-decoration: none;
+        }
+        .post-meta {
+            float: left;
+            font-size: 1.3em;
+            color: #202121;
+            margin: 0 2em 0 0;
+            a {
+                color: #202121;
+                text-decoration: none;
+            }
+            .author-img-meta {
+                float: left;
+                margin: 1em 0.5em 0 0;
+            }
+            .author-name-meta {
+                float: left;
+                margin: 1.4em 0;
+            }
+            p {
+                margin: 1.3em 0;
+            }
+        }
+        .post-tags-container {
+            margin: 1em 0;
+            .post-tags {
+                margin: 0 0.2em 0 1.5em;
+            }
+            > :first-child {
+                margin: 0 0.3em 0 0;
+            }
+            a {
+                color: #202121;
+                text-decoration: none;
+            }
+        }
+    }
+}
+/* // NOTE Blog Page Styles */
+.single {
+    .post {
+        padding: 1.5em;
+        background-color: #f0f0f0;
+    }
+    .post-meta-container {
+        padding: 1.5em;
+        text-align: center;
+    }
+    .post-meta-title {
+        color: #ffffff;
+        margin: 1em 0;
+    }
+    .post-meta {
+        display: inline-block;
+        margin: 2em 2em 0 0;
+        color: #ffffff;
+        font-size: 1.3em;
+        a {
+            color: #ffffff;
+        }
+        .author-img-meta {
+            display: inline-block;
+        }
+        .author-name-meta {
+            display: inline-block;
+            margin-left: 0.5em;
+        }
+    }
+    .post-tags-container {
+        margin-top: 3em;
+        color: #ffffff;
+        .post-tags {
+            color: #ffffff;
+            margin: 0 0.5em 0 1.5em;
+        }
+        > :first-child {
+            margin-left: 0;
+        }
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+    }
+}
