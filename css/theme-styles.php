@@ -41,7 +41,7 @@ $colors = get_option('sts_theme_colors');
     /* Button Styling */
 
     .btn {
-        color: <?php echo get_option('button_text_color') ?> !important;
+        color: <?php echo $colors['button_text_color'] ?> !important;
         background-color: <?php echo $colors['button_color'] ?>;
     }
 
