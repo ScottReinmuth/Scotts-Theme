@@ -1,11 +1,23 @@
 <?php
+//Enqueue Nessesary Scripts
+function scotts_admin_scripts(){
+    wp_enqueue_script('scotts-theme-settings-js', get_template_directory_uri() . '/theme-settings/theme-settings-page-js.js', '','', true );
+    wp_enqueue_script('wp-color-picker');
+    wp_enqueue_style('wp-color-picker');
+    wp_enqueue_style('theme-settings-styles', get_template_directory_uri() . '/theme-settings/theme-settings-styling.css');
+    wp_enqueue_style('jquery');
+    wp_enqueue_script('jquery-ui-core');
+    wp_enqueue_script('jquery-ui-tabs');
+}
+add_action('admin_enqueue_scripts', 'scotts_admin_scripts');
+
 // create custom plugin settings menu
 add_action('admin_menu', 'scotts_theme_options_create_menu');
 
 function scotts_theme_options_create_menu() {
 
     //create new top-level menu
-    add_menu_page('Scotts Theme Settings', 'Theme Settings', 'administrator', __FILE__, 'scotts_theme_options' );
+    add_menu_page('Scotts Theme Settings', 'Theme Settings', 'administrator', 'theme-settings-page', 'scotts_theme_options' );
 
     //call register settings function
     add_action( 'admin_init', 'register_scotts_theme_options_settings' );
@@ -28,7 +40,16 @@ $layout_options = get_option('sts_layout_options');
         <form method="post" action="options.php">
             <?php settings_fields( 'scotts-theme-options-group' ); ?>
                 <?php do_settings_sections( 'scotts-theme-options-group' ); ?>
-                    <table class="form-table">
+                <div id="tabs" class="clearfix">
+                  <ul>
+                    <li><a href="#theme-color-settings">Theme Color Settings</a></li>
+                    <li><a href="#header-settings">Header Settings</a></li>
+                    <li><a href="#link-settings">Link Settings</a></li>
+                    <li><a href="#button-settings">Button Settings</a></li>
+                    <li><a href="#layout-settings">Layout Settings</a></li>
+                  </ul>
+                  <div id="theme-color-settings">
+                    <table>
                         <tr>
                             <th>Primary Theme Color</th>
                             <td>
@@ -36,63 +57,71 @@ $layout_options = get_option('sts_layout_options');
                             </td>
                         </tr>
                     </table>
+                  </div>
+                    <div id="header-settings">
                     <h2>Header Settings</h2>
-                    <table class="form-table">
-                        <tr valign="top">
-                            <th scope="row">Header Background</th>
+                    <table>
+                        <tr>
+                            <th>Header Background</th>
                             <td>
                                 <input type="text" name="sts_theme_colors[header_background_color]" class="color-picker" data-default-color="#202121" value="<?php echo esc_attr( $colors['header_background_color'] ); ?>" />
                             </td>
                         </tr>
-                        <tr valign="top">
-                            <th scope="row">Header Font Color</th>
+                        <tr>
+                            <th>Header Font Color</th>
                             <td>
                                 <input type="text" name="sts_theme_colors[header_font_color]" class="color-picker" data-default-color="#ffffff" value="<?php echo esc_attr( $colors['header_font_color'] ); ?>" />
                             </td>
                         </tr>
-
                     </table>
+                  </div>
+                  <div id="link-settings">
                     <h2>Link Settings</h2>
-                    <table class="form-table">
-                        <tr valign="top">
-                            <th scope="row">Link Color</th>
+                    <table>
+                        <tr>
+                            <th>Link Color</th>
                             <td>
                                 <input type="text" name="sts_theme_colors[link_color]" class="color-picker" value="<?php echo esc_attr( $colors['link_color'] ); ?>" />
                             </td>
                         </tr>
 
-                        <tr valign="top">
-                            <th scope="row">Link Hover Color</th>
+                        <tr>
+                            <th>Link Hover Color</th>
                             <td>
                                 <input type="text" name="sts_theme_colors[link_hover_color]" class="color-picker" value="<?php echo esc_attr( $colors['link_hover_color'] ); ?>" />
                             </td>
                         </tr>
                     </table>
+                  </div>
+                  <div id="button-settings">
                     <h2>Button Settings</h2>
-                    <table class="form-table">
-                        <tr valign="top">
-                            <th scope="row">Button Color</th>
+                    <table>
+                        <tr>
+                            <th>Button Color</th>
                             <td>
                                 <input type="text" name="sts_theme_colors[button_color]" class="color-picker" value="<?php echo esc_attr( $colors['button_color'] ); ?>" />
                             </td>
                         </tr>
 
-                        <tr valign="top">
-                            <th scope="row">Button Hover Color</th>
+                        <tr>
+                            <th>Button Hover Color</th>
                             <td>
                                 <input type="text" name="sts_theme_colors[button_hover_color]" class="color-picker" value="<?php echo esc_attr( $colors['button_hover_color'] ); ?>" />
                             </td>
                         </tr>
 
-                        <tr valign="top">
-                            <th scope="row">Button Text Color</th>
+                        <tr>
+                            <th>Button Text Color</th>
                             <td>
                                 <input type="text" name="sts_theme_colors[button_text_color]" class="color-picker" value="<?php echo esc_attr( $colors['button_text_color'] ); ?>" />
                             </td>
                         </tr>
-
-                        <tr valign="top">
-                            <th scope="row">Blog Layout</th>
+</table>
+</div>
+<div id="layout-settings">
+<table>
+                        <tr>
+                            <th>Blog Layout</th>
                             <td>
                               <select name='sts_layout_options[sts_select_blog_template]'>
                             		<option value='1' <?php selected( $layout_options['sts_select_blog_template'], 1 ); ?>>Default</option>
@@ -101,9 +130,13 @@ $layout_options = get_option('sts_layout_options');
                             </td>
                         </tr>
                     </table>
+                  </div>
+                  </div>
 
                     <?php submit_button(); ?>
 
         </form>
     </div>
+
+
     <?php } ?>

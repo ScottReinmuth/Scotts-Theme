@@ -10,23 +10,11 @@ function scotts_theme_js(){
     wp_enqueue_script('bootstrap4_js', 'https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js', '', '', true);
     wp_enqueue_script('mobile_nav_js', get_template_directory_uri() . '/js/mobile-nav.js', '', '', true);
     wp_enqueue_script('theme_js', get_template_directory_uri() . '/js/theme-js.js', '', '', true);
-    wp_enqueue_script('google_jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js','','');
+    wp_enqueue_script('google_jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js','','', true);
     wp_enqueue_script('google_jquery_ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js', '', '', true);
     wp_enqueue_script('wow_js', get_template_directory_uri() . '/js/wow.min.js', '', '', true);
 }
 add_action('wp_enqueue_scripts', 'scotts_theme_js');
-
-
-function scotts_admin_scripts(){
-    wp_enqueue_script('scotts-theme-settings-js', get_template_directory_uri() . '/theme-settings/theme-settings-page-js.js' );
-    wp_enqueue_script('wp-color-picker');
-    wp_enqueue_style('wp-color-picker');
-    wp_enqueue_style('theme-settings-styles', get_template_directory_uri() . '/theme-settings/theme-settings-styling.css');
-
-}
-add_action('admin_enqueue_scripts', 'scotts_admin_scripts');
-
-
 
 // Add theme support
 function scotts_theme_add_theme_support(){
