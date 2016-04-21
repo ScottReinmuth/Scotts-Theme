@@ -49,25 +49,22 @@ $layout_options = get_option('sts_layout_options');
                     <li><a href="#layout-settings">Layout Settings</a></li>
                   </ul>
                   <div id="theme-color-settings">
-                    <table>
-                        <tr>
-                            <th>Primary Theme Color</th>
-                            <td>
-                                <input type="text" name="sts_theme_colors[primary_theme_color]" class="color-picker" value="<?php echo esc_attr__( $colors['primary_theme_color'] ); ?>" />
-                            </td>
-                        </tr>
-                    </table>
+                    <h2>Theme Color Settings</h2>
+                    <div class="settings-option">
+                      <h4 class="option-title">Primary Theme Color</h4>
+                      <input type="text" name="sts_theme_colors[primary_theme_color]" class="color-picker" value="<?php echo esc_attr__( $colors['primary_theme_color'] ); ?>" />
+                    </div>
                   </div>
                     <div id="header-settings">
                     <h2>Header Settings</h2>
                     <table>
-                        <tr>
+                        <tr class="settings-option">
                             <th>Header Background</th>
                             <td>
                                 <input type="text" name="sts_theme_colors[header_background_color]" class="color-picker" data-default-color="#202121" value="<?php echo esc_attr( $colors['header_background_color'] ); ?>" />
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="settings-option">
                             <th>Header Font Color</th>
                             <td>
                                 <input type="text" name="sts_theme_colors[header_font_color]" class="color-picker" data-default-color="#ffffff" value="<?php echo esc_attr( $colors['header_font_color'] ); ?>" />
@@ -119,6 +116,7 @@ $layout_options = get_option('sts_layout_options');
 </table>
 </div>
 <div id="layout-settings">
+  <h2>Layout Settings</h2>
 <table>
                         <tr>
                             <th>Blog Layout</th>
