@@ -262,6 +262,15 @@ add_action('admin_enqueue_scripts', 'scotts_admin_scripts');
                 'subtitle' => '',
                 'default' => '#1e5ebf',
                 'transparent' => false,
+            ),
+            array(
+                'id'       => 'button_text_color',
+                'type'     => 'color',
+                'title'    => 'Button Text Color',
+                'desc'     => '',
+                'subtitle' => '',
+                'default' => '#ffffff',
+                'transparent' => false,
             )
         )
     ) );

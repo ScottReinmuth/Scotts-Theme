@@ -41,7 +41,7 @@ global $sts_redux;
     /* Button Styling */
 
     .btn {
-        color: <?php echo $colors['button_text_color'] ?> !important;
+        color: <?php echo $sts_redux['button_text_color'] ?> !important;
         background-color: <?php echo $sts_redux['button_color'] ?>;
     }
 
