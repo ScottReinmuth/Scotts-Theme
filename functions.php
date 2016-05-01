@@ -144,10 +144,20 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 // End Custom Exerpt Length
 
 // Include Theme Options
-require_once(get_template_directory() . '/theme-settings/theme-settings.php');
 add_action('wp_head', 'my_custom_css');
     function my_custom_css(){
     require_once( get_template_directory() . '/css/theme-styles.php' );
 }
 // End Include Theme Options
 ?>
+
+<?php
+
+if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/theme-settings/Redux-Framework/ReduxCore/framework.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/theme-settings/Redux-Framework/ReduxCore/framework.php' );
+}
+if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/theme-settings/theme-settings.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/theme-settings/theme-settings.php' );
+}
+
+ ?>

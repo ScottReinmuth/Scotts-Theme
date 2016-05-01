@@ -49,3 +49,6 @@
     display: -ms-flexbox;
     display: flex;
 }
+a:focus {
+    outline: none !important;
+}
