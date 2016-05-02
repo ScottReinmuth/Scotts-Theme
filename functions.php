@@ -156,7 +156,8 @@ add_action('wp_head', 'my_custom_css');
 if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/theme-settings/Redux-Framework/ReduxCore/framework.php' ) ) {
     require_once( dirname( __FILE__ ) . '/theme-settings/Redux-Framework/ReduxCore/framework.php' );
 }
-if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/theme-settings/theme-settings.php' ) ) {
+
+if ( !isset( $sts_redux ) && file_exists( dirname( __FILE__ ) . '/theme-settings/theme-settings.php' ) ) {
     require_once( dirname( __FILE__ ) . '/theme-settings/theme-settings.php' );
 }
 

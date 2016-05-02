@@ -12,11 +12,6 @@ add_action('admin_enqueue_scripts', 'scotts_admin_scripts');
 
 <?php
 
-    /**
-     * ReduxFramework Barebones Sample Config File
-     * For full documentation, please visit: http://docs.reduxframework.com/
-     */
-
     if ( ! class_exists( 'Redux' ) ) {
         return;
     }
@@ -44,8 +39,8 @@ add_action('admin_enqueue_scripts', 'scotts_admin_scripts');
         //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
         'allow_sub_menu'       => true,
         // Show the sections below the admin menu item or not
-        'menu_title'           => 'Theme Settings',
-        'page_title'           => 'Theme Settings',
+        'menu_title'           => __('Theme Settings', 'sts-redux'),
+        'page_title'           => __('Theme Settings', 'sts-redux'),
         // You will need to generate a Google API key to use this feature.
         // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
         'google_api_key'       => '',
